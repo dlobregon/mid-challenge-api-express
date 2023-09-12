@@ -1,0 +1,11 @@
+this is an API that communicates with another API. 
+http://api.tvmaze.com/shows/82/episodes
+List of endpoints:
+1 - /catalog - returns all the data from the previous endpoint. 
+2 - /catalog?page=2 use pagination
+4 - /list/:id/:other?
+    - post - add to the list
+    - get - get the list - use pagiantion. 
+    - patch - replace by other
+    - delete - delete the element from db. 
+
