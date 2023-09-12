@@ -3,8 +3,10 @@ const catalogController = require('../controllers/catalogController');
 
 router.get('/', async (req, res) => {
   try {
+    const { startIndex, endIndex } = req.pagination;
     const catalog = await catalogController.getCatalog();
-    res.status(200).json(catalog);
+    const newCatalog = catalog.slice(startIndex, endIndex);
+    res.status(200).json(newCatalog);
   } catch (e) {
     res.status(404).end();
   }
