@@ -1,8 +1,12 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const dotenv = require('dotenv');
 
-app.use(express.json())
+dotenv.config();
+const app = express();
 
-app.listen(3000,()=>{
-    console.log('Server listen at port 3000')
-})
+app.use(express.json());
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Service running at port ${port}`);
+});
